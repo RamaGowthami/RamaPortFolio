@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rama Gowthami - Portfolio</title>
+
+  
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-pV8rH3eK6pQ+4ue5z2T9FwzxZhWlVz+NFWo6JnCJt74uQw61/afZV69Qjla2bbiBfi5vU9jFZRl6rjjb+8cpXA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+<style>
+  /* Reset & Base */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+    line-height: 1.6;
+  }
+
+  a {
+    color: #60a5fa;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  h1, h2, h3 {
+    color: #f8fafc;
+  }
+
+  /* Header */
+  header {
+    background-color: #1e293b;
+    padding: 30px 40px;
+    border-bottom: 2px solid #334155;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  header p {
+    font-size: 1rem;
+    color: #94a3b8;
+  }
+
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    border: 3px solid #60a5fa;
+    box-shadow: 0 0 12px rgba(96, 165, 250, 0.3);
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+
+  nav ul li a {
+    color: #cbd5e1;
+    font-weight: 500;
+    transition: 0.3s;
+  }
+
+  nav ul li a:hover {
+    color: #60a5fa;
+  }
+
+  /* Section Base */
+  section, footer {
+    background: #1e293b;
+    padding: 30px 40px;
+    margin: 20px auto;
+    max-width: 1000px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #334155;
+    padding-bottom: 10px;
+  }
+
+  /* Skills */
+  .skill-entry {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .skill-logo {
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+    object-fit: cover;
+  }
+
+  .skill-name {
+    min-width: 100px;
+    font-weight: 500;
+  }
+
+  .bar {
+    flex: 1;
+    height: 10px;
+    background: #334155;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .bar::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    height: 100%;
+    background-color: #60a5fa;
+    border-radius: 5px;
+    animation: fillBar 1s ease-in-out forwards;
+  }
+
+  /* Contact */
+  #contact ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  #contact li {
+    margin-bottom: 10px;
+  }
+
+  #contact i {
+    color: #60a5fa;
+    margin-right: 8px;
+  }
+
+  /* Project & Education Lists */
+  .project, #education ul, #work ul {
+    margin-bottom: 20px;
+  }
+
+  .project h3 {
+    color: #fbbf24;
+    font-size: 1.3rem;
+    margin-top: 15px;
+  }
+
+  #education ul li, #work ul li {
+    margin-bottom: 10px;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #94a3b8;
+    border-top: 1px solid #334155;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    header, section {
+      padding: 20px;
+    }
+
+    nav ul {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .profile-pic {
+      margin-top: 15px;
+    }
+  }
+
+  /* Bar fill animation */
+  @keyframes fillBar {
+    from {
+      width: 0%;
+    }
+    to {
+      width: var(--width);
+    }
+  }
+</style>
+
+  <!--<style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: white;
+      padding: 20px 40px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+      color: #222;
+    }
+
+    header p {
+      margin: 4px 0 0 0;
+      font-weight: 400;
+      color: #666;
+      flex-basis: 100%;
+    }
+
+    .profile-pic {
+      width: 120px;
+      height: auto;
+      border-radius: 50%;
+      border: 3px solid #3498db;
+      box-shadow: 0 0 8px rgba(52, 152, 219, 0.6);
+      transition: box-shadow 0.3s ease;
+      margin-left: auto;
+    }
+
+    .profile-pic:hover {
+      box-shadow: 0 0 14px rgba(52, 152, 219, 0.9);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      margin: 10px 0 0 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin-left: 20px;
+    }
+
+    nav ul li:first-child {
+      margin-left: 0;
+    }
+
+    nav ul li a {
+      color: #3498db;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #1d6fa5;
+      text-decoration: underline;
+    }
+
+    section, footer {
+      background: white;
+      padding: 20px 40px;
+      margin: 20px auto 10px auto;
+      border-radius: 8px;
+      max-width: 900px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .skill-entry {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .skill-logo {
+      width: 30px;
+      height: 30px;
+      object-fit: contain;
+      margin-right: 10px;
+      border-radius: 4px;
+    }
+
+    .skill-name {
+      min-width: 100px;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .bar {
+      height: 10px;
+      background-color: #3498db;
+      border-radius: 5px;
+      flex-grow: 1;
+      max-width: 300px;
+      transition: width 1s ease;
+    }
+
+    @media (max-width: 600px) {
+      .skill-entry {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .bar {
+        width: 100% !important;
+        max-width: 100%;
+      }
+    }
+
+    #contact ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    #contact li {
+      margin-bottom: 10px;
+    }
+
+    #contact i {
+      margin-right: 8px;
+      color: #3498db;
+    }
+  </style>-->
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Rama Gowthami</h1>
+      <p>Full Stack Developer | Java | Angular | Spring Boot</p>
+    </div>
+    <img src="assets/img/profilepicrama.jpg" alt="Rama Gowthami" class="profile-pic" />
+    <nav>
+      <ul>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#work">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="cta-buttons">
+  <a href="assets/RAMAGOWTHAMI_ANGULAR_JAVA_RESUME_Sharjha.docx" target="_blank" class="btn">View Resume</a>
+  <a href="#contact" class="btn btn-outline">Get In Touch</a>
+</div>
+
+  </header>
+  <section id="summary">
+  <h2>Professional Summary</h2>
+  <p>
+    Experienced and dedicated Full Stack Developer with over 3 years of industry experience, specializing in building scalable web applications using Java, Spring Boot, Angular, and MySQL. Proficient in front-end and back-end development with a solid understanding of Agile methodologies and DevOps practices. Demonstrated history of working in domains such as Insurance, Healthcare, and Engineering tools. Passionate about writing clean, maintainable code and continually learning new technologies to enhance application performance and user experience.
+  </p>
+</section>
+
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <ul>
+      <li><i class="fas fa-envelope"></i> rama.gowthami77@gmail.com</li>
+      <li><i class="fas fa-phone"></i> +91-xxxxxxxxx, +971-xxxxxxxxxxx</li>
+      <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/rama-gowthami-choday-0b908b328">LinkedIn Profile</a></li>
+      <li><i class="fab fa-github"></i> <a href="https://github.com/RamaGowthami">GitHub Profile</a></li>
+    </ul>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+
+    <div class="skill-entry">
+      <img src="assets/img/javalogo.jpeg" alt="Java" class="skill-logo" />
+      <span class="skill-name">Java</span>
+      <div class="bar" style="--width: 90%"></div>
+    </div>
+
+    <div class="skill-entry">
+      <img src="assets/img/dotnet-logo.webp" alt="Dotnet" class="skill-logo" />
+      <span class="skill-name">Dotnet</span>
+      <div class="bar" style="--width: 40%"></div>
+    </div>
+
+    <div class="skill-entry">
+      <img src="assets/img/sql-logo.webp" alt="SQL" class="skill-logo" />
+      <span class="skill-name">SQL</span>
+      <div class="bar" style="--width: 80%"></div>
+    </div>
+
+    <div class="skill-entry">
+      <img src="assets/img/springboot-logo.jpeg" alt="Spring Boot" class="skill-logo" />
+      <span class="skill-name">Spring Boot</span>
+      <div class="bar" style="--width: 80%"></div>
+    </div>
+
+    <div class="skill-entry">
+      <img src="assets/img/Angular-logo.jpeg" alt="Angular" class="skill-logo" />
+      <span class="skill-name">Angular</span>
+      <div class="bar" style="--width: 90%"></div>
+    </div>
+
+    <div class="skill-entry">
+      <img src="assets/img/html5-logo.jpeg" alt="HTML" class="skill-logo" />
+      <span class="skill-name">HTML</span>
+      <div class="bar" style="--width: 90%"></div>
+    </div>
+
+    <div class="skill-entry">
+      <img src="assets/img/manualtesting.jpeg" alt="Manual Testing" class="skill-logo" />
+      <span class="skill-name">Manual Testing</span>
+      <div class="bar" style="--width: 60%"></div>
+    </div>
+
+    <div class="skill-entry">
+      <img src="assets/img/git.jpeg" alt="Git" class="skill-logo" />
+      <span class="skill-name">Git</span>
+      <div class="bar" style="--width: 80%"></div>
+    </div>
+
+    <div class="skill-entry">
+      <img src="assets/img/BugZilla.jpeg" alt="Bugzilla" class="skill-logo" />
+      <span class="skill-name">Bugzilla</span>
+      <div class="bar" style="--width: 90%"></div>
+    </div>
+
+    <div class="skill-entry">
+      <img src="assets/img/Angular-logo.jpeg" alt="JavaScript" class="skill-logo" />
+      <span class="skill-name">JavaScript</span>
+      <div class="bar" style="--width: 90%"></div>
+    </div>
+
+    <div class="skill-entry">
+      <img src="assets/img/Azure-logo.jpeg" alt="Azure DevOps" class="skill-logo" />
+      <span class="skill-name">Azure DevOps</span>
+      <div class="bar" style="--width: 60%"></div>
+    </div>
+
+    <div class="skill-entry">
+      <img src="assets/img/agile-logo.jpg" alt="Agile" class="skill-logo" />
+      <span class="skill-name">Agile</span>
+      <div class="bar" style="--width: 60%"></div>
+    </div>
+
+    <div class="skill-entry">
+      <img src="assets/img/MongoDb-logo.jpeg" alt="MongoDB" class="skill-logo" />
+      <span class="skill-name">MongoDB</span>
+      <div class="bar" style="--width: 60%"></div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <ul>
+      <li><strong>MCA (2012–2015):</strong> Gokaraju Rangaraju Institute – 83.6%</li>
+      <li><strong>B.Sc (2008–2011):</strong> Vignan Institute – 74.6%</li>
+      <li><strong>Intermediate (2006–2008):</strong> Aditya Junior College – 86.5%</li>
+      <li><strong>SSC(2005-06):</strong> Z.P.H.S. – 89.6%</li>
+    </ul>
+  </section>
+
+  <section id="experience">
+  <h2>Projects</h2>
+
+
+  <div class="project">
+    <h3>Aquila</h3>
+    <p><strong>Description:</strong> Worked in Aquila project to detect fraud in Insurance, project handling insurance claims.</p>
+    <p><strong>Team Size:</strong> 8 members</p>
+    <p><strong>Company Name:</strong>Softsol India</p>
+    <p><strong>Technologies:</strong> Java, Spring Boot,BootStrap,Solr, Angular 8+, MySQL</p>
+    <p><strong>Duration:</strong> 2022-2024</p>
+    <p><strong>Role:Software Engineer</strong></p>
+  </div>
+
+  <div class="project">
+    <h3>Surge</h3>
+    <p><strong>Description:</strong> DHS project for hospital management for Health Care Management.</p>
+    <p><strong>Team Size:</strong> 40 members</p>
+    <p><strong>Company Name:</strong>Softsol India</p>
+    <p><strong>Technologies:</strong> Dotnet, Oracle21g</p>
+     <p><strong>Duration:</strong> 2022-2024</p>
+     <p><strong>Role:Software Engineer</strong></p>
+  </div>
+  <div class="project">
+    <h3>SPF</h3>
+   <p> <Strong>FreeLancer</Strong></p>
+    <p><strong>Description:</strong> Worked in Smart Plant Foundation tools Project.</p>
+    <p><strong>Team Size:</strong> 3 members</p>
+    <p><strong>Company Name:</strong>VrajCad Technologies</p>
+    <p><strong>Tools:</strong>Spf-Engg Domain</p>
+     <p><strong>Duration:</strong> 2021-2022</p>
+  </div>
+   <div class="project">
+    <h3>Bus Reservation System</h3>
+    <p><strong>Description:</strong> Bus Reservation Project for reservation seats management and booking Buses for Customers.</p>
+    <p><strong>InternShip Name:</strong>Guvi-HCL</p>
+    <p><strong>Technologies:</strong>Java, Spring Boot,BootStrap, Thymeleaf, MySQL</p>
+     <p><strong>Duration:</strong> 2024-2025</p>
+  </div>
+  <div class="project">
+    <h3>Patient-Medicine-Appointment Management System</h3>
+    <p><strong>Description:</strong> Patient-Appointments Booking,Adding Time Slotw for Appointments Dynamically and Prescribing Medicines for each patient depends on his health Condition.</p>
+    <p><strong>InternShip Name:</strong>Guvi-HCL</p>
+    <p><strong>Technologies:</strong>Java, Spring Boot,BootStrap, Thymeleaf, MySQL</p>
+     <p><strong>Duration:</strong> 2024-2025</p>
+  </div>
+  <div class="project">
+    <h3>Employee-Management System</h3>
+    <p><strong>Description:</strong>Handles CRUD on Employee Management in an Organization .</p>
+    <p><strong>InternShip Name:</strong>Guvi-HCL</p>
+    <p><strong>Technologies:</strong>Java, Spring Boot,BootStrap, Thymeleaf, MySQL</p>
+     <p><strong>Duration:</strong> 2024-2025</p>
+  </div>
+</section>
+
+
+  <section id="work">
+    <h2>Certifications</h2>
+    <ul>
+      <li>Java Full Stack Programmer Certification – Guvi HCL – 2025</li>
+      <li>NSDC Certification in Java</li>
+       <li>AryaBhatta Award Cerificate From Aditya Junior College Getting District Level Rank.</li>
+      <li>Got Acadamic Certifications for ClassFirst in Studies.</li>
+       
+    </ul>
+  </section>
+
+  <footer>
+    <p>Designed by Rama Gowthami</p>
+  </footer>
+</body>
+</html>

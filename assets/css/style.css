@@ -1,0 +1,166 @@
+
+/* Body and general layout */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f4f4f4; /* Light gray background */
+  color: #333333; /* Medium dark text */
+}
+
+/* Header layout */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff; /* White background */
+  padding: 20px 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* subtle shadow */
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 28px;
+  color: #222222; /* Darker text */
+}
+
+header p {
+  margin: 4px 0 0 0;
+  font-weight: 400;
+  color: #666666; /* Light gray text */
+  flex-basis: 100%;
+}
+
+/* Navigation styles */
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 10px 0 0 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li:first-child {
+  margin-left: 0;
+}
+
+nav ul li a {
+  color: #3498db; /* Primary blue */
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #1d6fa5; /* Darker blue on hover */
+  text-decoration: underline;
+}
+
+/* Profile Picture */
+.profile-pic {
+  width: 120px;
+  height: auto;
+  border-radius: 50%;
+  border: 3px solid #3498db; /* Primary blue border */
+  box-shadow: 0 0 8px rgba(52, 152, 219, 0.6);
+  transition: box-shadow 0.3s ease;
+  margin-left: auto;
+}
+
+.profile-pic:hover {
+  box-shadow: 0 0 14px rgba(52, 152, 219, 0.9);
+}
+
+/* Section and footer styling */
+section, footer {
+  background: #ffffff; /* White background */
+  padding: 20px 40px;
+  margin: 20px auto 10px auto;
+  border-radius: 8px;
+  max-width: 900px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Contact list styling */
+#contact ul {
+  list-style: none;
+  padding: 0;
+}
+
+#contact li {
+  margin-bottom: 10px;
+}
+
+#contact i {
+  margin-right: 8px;
+  color: #3498db; /* Primary blue for icons */
+}
+
+/* Skills styling */
+.skill-entry {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.skill-logo {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+
+.skill-name {
+  min-width: 100px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #222222; /* Darker text */
+}
+
+.bar {
+  height: 10px;
+  background-color: #3498db; /* Primary blue for skill bars */
+  border-radius: 5px;
+  flex-grow: 1;
+  max-width: 300px;
+  transition: width 1s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+  }
+
+  nav ul li {
+    margin-left: 0;
+    margin-right: 15px;
+  }
+
+  .skill-entry {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .bar {
+    width: 100% !important;
+    max-width: 100%;
+  }
+}
+
+
